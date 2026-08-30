@@ -5,7 +5,8 @@ const app = express();
 const PORT = 4000;
 app.use(express.static(path.join(__dirname, "files")));
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    console.log("active");
+    res.send(index.html);
 });
 
 app.listen(PORT, () => {
