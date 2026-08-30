@@ -9,6 +9,10 @@ app.get("/", (req, res) => {
     res.send(index.html);
 });
 
+app.get("/test", (req, res) =>{
+    res.send("sane as you are");
+})
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
