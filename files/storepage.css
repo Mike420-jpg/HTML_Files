@@ -1,12 +1,12 @@
 /* Foants Imported */
 @font-face {
   font-family: EncodeSans_GC; /* Font Name */
-  src: url(../Fonts/EncodeSans_SC/EncodeSansSC-SemiBold.ttf);
+  src: url(Fonts/EncodeSans_SC/EncodeSansSC-SemiBold.ttf);
 }
 
 @font-face {
   font-family: Merriweather; /* Font Name */
-  src: url(../Fonts/Merriweather/Merriweather_120pt-SemiBold.ttf);
+  src: url(Fonts/Merriweather/Merriweather_120pt-SemiBold.ttf);
 }
 
 :root {
@@ -254,6 +254,13 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .product-image {
@@ -391,6 +398,12 @@
     width: 100%;
     max-width: 200px;
     height: auto;
+    cursor: pointer;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
   }
 
   .product-image {

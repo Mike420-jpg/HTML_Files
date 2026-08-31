@@ -46,3 +46,16 @@ form.addEventListener("submit", (event) => {
     event.preventDefault(); // Prevent the form from refreshing the page on submit
     SearchProducts();
 });
+
+const productCards = document.querySelectorAll(".product-card");
+
+productCards.forEach(card => {
+    card.addEventListener("click", () => {
+        const productId = card.dataset.productId;
+
+        window.location.href = `productpage.html?productId=${productId}`;
+        console.log(`Redirecting to product page for product ID: ${productId}`);
+    });
+});
+
+document.getElementById('')
