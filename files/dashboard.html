@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caravan - Admin Dashboard</title>
+  
+  <!-- FontAwesome & Chart.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Navigation Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <h2>Caravan Admin</h2>
+    </div>
+    <ul class="admin-nav">
+      <li class="admin-nav-item active">
+        <a href="#"><i class="fa-solid fa-desktop"></i> Dashboard</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-flask"></i> Products &amp; Reports</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-receipt"></i> Orders Reports</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-box-archive"></i> Stocks Inventory</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-user"></i> Manage Accounts</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-chart-line"></i> Sales Report</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-sliders"></i> Content Management</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+      </li>
+      <li class="admin-nav-item">
+        <a href="#"><i class="fa-solid fa-file-shield"></i> Audit Trail</a>
+      </li>
+      <li class="admin-nav-item nav-logout">
+        <a href="#"><i class="fa-solid fa-door-open"></i> Sign Out</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main View Dashboard -->
+  <main class="admin-main">
+    <div class="dashboard-header">
+      <h1>Performance Dashboard</h1>
+      <button class="btn-action" onclick="toggleModal(true)"><i class="fa-solid fa-plus"></i> New Order</button>
+    </div>
+
+    <!-- Summary Metrics Cards -->
+    <div class="metrics-container">
+      <div class="stat-card">
+        <h4>Total Sales</h4>
+        <div class="value" id="totalSales">₱0.00</div>
+      </div>
+      <div class="stat-card">
+        <h4>Total Orders</h4>
+        <div class="value" id="totalOrders">0</div>
+      </div>
+      <div class="stat-card">
+        <h4>Pending Orders</h4>
+        <div class="value" id="pendingOrders">0</div>
+      </div>
+      <div class="stat-card">
+        <h4>Failed Orders</h4>
+        <div class="value" id="failedOrders">0</div>
+      </div>
+    </div>
+
+    <!-- Visual Charts -->
+    <div class="charts-grid">
+      <div class="chart-box">
+        <h3>Sales per Order (₱)</h3>
+        <canvas id="salesChart" height="130"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Order Status Distribution</h3>
+        <canvas id="statusChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Recent Orders Data Table -->
+    <div class="table-container">
+      <h3>Recent Transactions</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Items</th>
+            <th>Amount (₱)</th>
+            <th>Status (Click to Toggle)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTableBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Add Order Modal -->
+  <div class="modal" id="orderModal">
+    <div class="modal-content">
+      <h3>Add New Order</h3>
+      <input type="text" id="custName" placeholder="Customer Name">
+      <input type="text" id="orderItems" placeholder="Items (e.g. 2x Roasted Arabica)">
+      <input type="number" id="orderAmount" placeholder="Amount (₱)">
+      <select id="orderStatus">
+        <option value="Delivered">Delivered</option>
+        <option value="Pending" selected>Pending</option>
+        <option value="Failed">Failed</option>
+      </select>
+      <div class="modal-buttons">
+        <button class="btn-action btn-cancel" onclick="toggleModal(false)">Cancel</button>
+        <button class="btn-action" onclick="addNewOrder()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard JavaScript File -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
