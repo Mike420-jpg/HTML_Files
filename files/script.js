@@ -1,5 +1,5 @@
 const elements = document.querySelectorAll(
-    ".Categories, .fade-title, .card"
+    ".Categories, .fade-title, .card, .explore-btn, .teamSection, .aboutUs"
   );
 
   const observer = new IntersectionObserver(

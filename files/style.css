@@ -14,6 +14,11 @@
   src: url(./Fonts/InstrumentSans/InstrumentSans-SemiBold.ttf);
 }
 
+@font-face {
+  font-family: InstrumentSans;
+  src: url(./Fonts/InstrumentSans/InstrumentSans-Regular.ttf);
+}
+
 /* NavBar */
 .nav-item .nav-link {
   color: #FFF4E9;
@@ -193,7 +198,6 @@
   transform: translateY(0);
 }
 
-
 /* Categories Container */
 .Selection {
   display: flex;
@@ -202,7 +206,6 @@
   gap: 30px;
   flex-wrap: wrap;
 }
-
 
 /* Individual Category */
 .Categories {
@@ -224,14 +227,11 @@
     background-color 0.3s ease;
 }
 
-
 /* Visible when scrolling into viewport */
 .Categories.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 
 /* Image */
 .catImage {
@@ -241,7 +241,6 @@
   object-fit: cover;
   display: block;
 }
-
 
 /* Text */
 .catType {
@@ -258,20 +257,99 @@
   background-color: white;
 }
 
-/*Card Section */
-.cardImg { 
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
+/* Card Section */
+.cardSection {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.cardContainer {
+  display: grid;
+
+  /* Automatically adjust number of columns */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 25px;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+  padding-top: 20px;
+  margin-bottom: 30px;
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 18rem;
-    flex-shrink: 0;
-    flex-grow: 0;
-    background: #6F4E37 !important;
-    transition: box-shadow 0.3s ease;
+  width: 100%; /* Adaptive width */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  background: #6F4E37 !important;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+
+  /* Initial fade state */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+
+.cardImg {
+  margin: 15px 15px 0;
+}
+
+.cardImg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card .card-text {
+  text-align: start;
+  font-size: 12px;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.card .art-price {
+  font-family: InstrumentSans_Semi;
+  color: #FFF4E9;
+}
+
+.card .card-title {
+  font-size: 20px;
+  font-family: InstrumentSans_Semi;
+  color: #FFF4E9;
+}
+
+#cardTitle1 {
+  text-align: center;
+  font-size: 32px;
+  font-family: Merriweather_Semi;
+  margin-bottom: 0px;
+}
+
+/* Explore More Button */
+.expmrBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Merriweather_Semi;
+  font-size: 18px;
+  margin-bottom: 50px;
 
   /* Initial fade state */
   opacity: 0;
@@ -284,55 +362,216 @@
     background-color 0.3s ease;
 }
 
-.card.show {
+.explore-btn {
+  width: 200px;
+  height: 45px;
+
+  background-color: #6F4E37 !important;
+  border-color: #6F4E37 !important;
+
+  font-family: Merriweather_Semi;
+  font-size: 16px;
+
+  /* Center text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+}
+
+.expmrBtn.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.card:hover { 
+.explore-btn:hover {
   transform: translateY(-12px);
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
-  background-color: white; 
+  background-color: white;
 }
 
-.card .card-text {
-    text-align: start;
-    font-size: 12px;
+/* Footer */
+.footer {
+    background-color: #6F4E37;
+    padding: 60px 20px 20px;
+    margin-top: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.footerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footerSection {
+    padding: 0 20px;
+}
+
+.footerTitle {
+    font-family: InstrumentSans_Semi;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footerText {
     font-family: "Instrument Sans", sans-serif;
-}
-
-.card .art-price {
-    font-family: InstrumentSans_Semi;
+    font-size: 13px;
     color: #FFF4E9;
+    line-height: 1.8;
+    margin: 0 0 15px 0;
+    text-align: justify;
 }
 
-.card .card-title {
-    font-size: 20px;
-    font-family: InstrumentSans_Semi;
+.footerBottom {
+    border-top: 1px solid #FFF4E9;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 12px;
     color: #FFF4E9;
+    margin: 0;
 }
 
-.cardContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding-top: 20px;
-  margin-bottom: 30px;
+/* About Us */
+.teamSection {
+    text-align: center;
+    width: 100%;
 }
 
-#cardTitle1 {
-  text-align: center;
-  font-size: 32px;
-  font-family: Merriweather_Semi;
-  margin-bottom: 0px;
+.teamTitle {
+    font-family: Merriweather_Semi;
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+.teamMemberCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
+.teamMemberPhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #588157;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.teamMemberPhoto:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.teamMemberName {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+}
+
+.missionVisionContainer {
+    background-color: #FCF5E5;
+    padding: 60px 20px;
+    text-align: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.missionVisionTitle {
+    font-family: Merriweather_Semi;
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.decorativeGold {
+    width: 60px;
+    height: 3px;
+    background-color: #333333;
+    margin: 15px auto 25px;
+}
+
+.misionVisionText {
+    font-family:  InstrumentSans;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.missionVisionText {
+    font-family: InstrumentSans;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.col-lg-6 .DecorativeLine {
+    width: 350px;
+    height: 60px;
+    transform: rotate(180deg);
+    margin-bottom: 15px;
+}
+
+.col-lg-6 .text-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -10px;
+}
+
+.aboutUsTitle {
+    font-family: Merriweather_Semi;
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.aboutUsSubtitle {
+    font-family: InstrumentSans;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Mobile Adaptivity */
 @media (max-width: 768px) {
   /* Navbar */
   .nav-center {
@@ -397,4 +636,67 @@
   .feature-text p {
     font-size: 14px;
   }
+}
+
+/* Card Container */
+@media (max-width: 480px) {
+
+  .cardSection {
+    padding: 0 10px;
+  }
+
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .cardImg {
+    margin: 10px 10px 0;
+  }
+
+  .card .card-title {
+    font-size: 16px;
+  }
+
+  .card .art-price {
+    font-size: 14px;
+  }
+
+  #cardTitle1 {
+    font-size: 26px;
+  }
+}
+
+/* About Us */
+@media (max-width: 768px) {
+
+    .missionVisionTitle {
+        font-size: 20px;
+    }
+
+    .teamTitle {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .teamMemberPhoto {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footerSection {
+        padding: 0;
+    }
+
+    .footerText {
+        font-size: 12px;
+    }
 }
