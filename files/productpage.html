@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Caravan - Productpage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="productpage.css" />
+</head>
+<body>
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <div class="nav-left">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="Images/CaravanLogo_Transparent.png"
+              alt="Caravan"
+              height="60"
+              id="Caravan_Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Center Navigation -->
+          <ul class="navbar-nav nav-center">
+            <li class="nav-item1">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item1">
+              <a class="nav-link" href="storepage.html">Market</a>
+            </li>
+
+            <li class="nav-item1">
+              <a class="nav-link" href="FAQs.html">FAQs</a>
+            </li>
+          </ul>
+
+          <!-- Right Navigation -->
+          <ul class="navbar-nav nav-right">
+            <li class="nav-item2">
+              <a class="nav-link" href="cartpage.html">Cart</a>
+            </li>
+
+            <li class="nav-item2">
+              <a class="nav-link" href="Login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="main-contents">
+        <div class="back-container">
+            <button class="back-button" onclick="goBack()">
+                <img src="Images/return-icon.png" alt="Return Icon" height="30" width="30" />
+            </button>
+        </div>
+        <div class="inner-contents">
+            <div class="product-container">
+                <div class="product-image-container">
+                    <img class="product-image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcAxwwn1DpLlZpLIwVMGcnF5bc0awGVo4o_dcrCprwnCKcxrYV" alt="Product Image" />
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Product Title</h1>
+                    <p class="product-description">This is a brief description of the product. It provides key details and features.</p>
+                    <p class="product-price">$99.99</p>
+                    <div class="cart-container">
+                        <button class="add-to-cart-button">
+                            <img src="Images/cart-icon.png" alt="Cart Icon" height="30" width="30" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="productpage.js"></script>
+</body>
+</html>
