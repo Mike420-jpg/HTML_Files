@@ -1,0 +1,109 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "Paprika",
+    "product_price": 99.99,
+    "product_amount": 10,
+    "product_desc": "Description for Paprika.",
+    "product_category": [
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
+      }
+    ],
+    "product_country": "",
+    "product_image": "https://www.allrecipes.com/thmb/S2m8CUhUXLWIWR5Lgv8RcO6fG5Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ALR-paprika-vs-smoked-paprika-VAT-4x3-6b963c83256040c99ff4011818bfa509.jpg"
+  },
+  {
+    "product_id": 2,
+    "product_name": "Black Pepper",
+    "product_price": 99.99,
+    "product_amount": 10,
+    "product_desc": "Description for Black Pepper.",
+    "product_category": [
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
+      },
+      {
+        "category_id": 9,
+        "category_name": "Herbs & Leaves"
+      }
+    ],
+    "product_country": "",
+    "product_image": "https://www.allrecipes.com/thmb/S2m8CUhUXLWIWR5Lgv8RcO6fG5Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ALR-paprika-vs-smoked-paprika-VAT-4x3-6b963c83256040c99ff4011818bfa509.jpg"
+  },
+  {
+    "product_id": 3,
+    "product_name": "Bird's Eye Chili",
+    "product_price": 99.99,
+    "product_amount": 10,
+    "product_desc": "Description for Bird's Eye Chili.",
+    "product_category": [
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
+      }
+    ],
+    "product_country": "",
+    "product_image": "https://www.allrecipes.com/thmb/S2m8CUhUXLWIWR5Lgv8RcO6fG5Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ALR-paprika-vs-smoked-paprika-VAT-4x3-6b963c83256040c99ff4011818bfa509.jpg"
+  },
+  {
+    "product_id": 4,
+    "product_name": "Cayenne Pepper",
+    "product_price": 99.99,
+    "product_amount": 10,
+    "product_desc": "Description for Cayenne Pepper.",
+    "product_category": [
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
+      }
+    ],
+    "product_country": "",
+    "product_image": "https://www.allrecipes.com/thmb/S2m8CUhUXLWIWR5Lgv8RcO6fG5Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ALR-paprika-vs-smoked-paprika-VAT-4x3-6b963c83256040c99ff4011818bfa509.jpg"
+  },
+  {
+    "product_id": 5,
+    "product_name": "Salt",
+    "product_price": 99.99,
+    "product_amount": 10,
+    "product_desc": "Description for Salt.",
+    "product_category": [
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
+      }
+    ],
+    "product_country": "",
+    "product_image": "https://www.allrecipes.com/thmb/S2m8CUhUXLWIWR5Lgv8RcO6fG5Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ALR-paprika-vs-smoked-paprika-VAT-4x3-6b963c83256040c99ff4011818bfa509.jpg"
+  }
+]
