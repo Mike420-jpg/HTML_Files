@@ -16,6 +16,44 @@ function toggleSubcategories(element) {
     arrow.classList.toggle("rotate");
 }
 
+fetch("products_list.json")
+    .then(response => response.json())
+    .then(products => {
+        const productsection = document.getElementsByClassName("product-section")[0];
+
+        products.forEach(product => {
+            const productCard = document.createElement("div");
+
+            productCard.classList.add("product-card");
+            productCard.dataset.productId = product.product_id;
+
+            productCard.innerHTML = `
+                <img 
+                    src="${product.product_image}" 
+                    alt="${product.product_name}" 
+                    class="product-image"
+                >
+
+                <div class="product-info">
+                    <h3 class="product-name">${product.product_name}</h3>
+                    <p class="product-price">₱${product.product_price.toFixed(2)}/oz.</p>
+                </div>
+            `;
+
+            productsection.appendChild(productCard);
+        });
+    })
+    .catch(error => {
+        console.error("Error loading products:", error);
+    });
+
+const form = document.getElementById("Searchbar");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page on submit
+    SearchProducts();
+});
+
 function SearchProducts() {
     const searchInput = document.getElementById("searchInput").value.toLowerCase();
     const productCards = document.querySelectorAll(".product-card");
@@ -24,7 +62,7 @@ function SearchProducts() {
     let foundProducts = false;
 
     productCards.forEach(card => {
-        const productName = card.querySelector("#product-name").textContent.toLowerCase();
+        const productName = card.querySelector(".product-name").textContent.toLowerCase();
         if (productName.includes(searchInput)) {
             card.style.display = "block";
             foundProducts = true;
@@ -40,22 +78,15 @@ function SearchProducts() {
     }
 }
 
-const form = document.getElementById("Searchbar");
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent the form from refreshing the page on submit
-    SearchProducts();
-});
 
-const productCards = document.querySelectorAll(".product-card");
+// const productCards = document.querySelectorAll(".product-card");
 
-productCards.forEach(card => {
-    card.addEventListener("click", () => {
-        const productId = card.dataset.productId;
+// productCards.forEach(card => {
+//     card.addEventListener("click", () => {
+//         const productId = card.dataset.productId;
 
-        window.location.href = `productpage.html?productId=${productId}`;
-        console.log(`Redirecting to product page for product ID: ${productId}`);
-    });
-});
-
-document.getElementById('')
+//         window.location.href = `productpage.html?productId=${productId}`;
+//         console.log(`Redirecting to product page for product ID: ${productId}`);
+//     });
+// });
