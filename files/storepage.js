@@ -40,6 +40,13 @@ fetch("products_list.json")
                 </div>
             `;
 
+            productCard.addEventListener("click", () => {
+                const productId = productCard.dataset.productId;
+
+                window.location.href = `productpage.html?productId=${productId}`;
+            });
+
+
             productsection.appendChild(productCard);
         });
     })
@@ -80,13 +87,14 @@ function SearchProducts() {
 
 
 
-// const productCards = document.querySelectorAll(".product-card");
+const productCards = document.querySelectorAll(".product-card");
 
-// productCards.forEach(card => {
-//     card.addEventListener("click", () => {
-//         const productId = card.dataset.productId;
+productCards.forEach(card => {
+    card.addEventListener("click", () => {
+        const productId = card.dataset.productId;
 
-//         window.location.href = `productpage.html?productId=${productId}`;
-//         console.log(`Redirecting to product page for product ID: ${productId}`);
-//     });
-// });
+        window.location.href = `productpage.html?productId=${productId}`;
+        console.log(`Redirecting to product page for product ID: ${productId}`);
+    });
+});
+

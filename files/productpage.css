@@ -30,20 +30,25 @@ body {
   color: #333;
 }
 
-/* Navbar & Banner Rules */
-.announcement-bar {
-  background-color: #583F2D;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 8px 12px;
-  letter-spacing: 0.5px;
-}
-
+/* Navbar Rules */
 .navbar {
   background-color: var(--color-primary);
-  padding: 5px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.container-fluid {
+  position: relative;
+}
+
+#Caravan_Logo {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .nav-left {
@@ -57,31 +62,33 @@ body {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 }
 
-.nav-divider {
-  color: white;
-  font-size: 14px;
-}
-
-.nav-link {
-  font-family: system-ui, sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.5px;
+.nav-item1 .nav-link,
+.nav-item2 .nav-link {
+  font-family: EncodeSans_GC, sans-serif;
   color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+}
+
+.nav-link:hover {
+  color: #a9a9a9 !important;
 }
 
 .main-contents {
   max-width: 850px;
-  margin: 20px auto 40px auto;
+  margin: 140px auto 40px auto;
   padding: 0 20px;
 }
 
@@ -98,7 +105,7 @@ body {
 /* Product Main Container */
 .product-container {
   display: flex;
-  border-radius: 0;
+  border-radius: 15px;
   overflow: hidden;
   margin-bottom: 45px;
   height: 320px;
@@ -200,7 +207,25 @@ body {
 
 /* Recommendations Grids */
 .recommendations-section {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
   margin-bottom: 35px;
+  box-sizing: border-box;
+}
+
+.recommendations-similar {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.recommendations-like {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .section-header {
@@ -211,47 +236,35 @@ body {
 }
 
 .section-header h2 {
-  font-family: system-ui, sans-serif;
-  font-size: 14px;
+  font-family: Merriweather, sans-serif;
+  font-size: 20px;
   font-weight: 500;
   color: #222;
   margin: 0;
 }
 
-.carousel-controls {
-  display: flex;
-  gap: 6px;
-}
-
-.control-btn {
-  background: #EAE3D9;
-  border: 1px solid #CCC;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  cursor: pointer;
-  color: #333;
-}
-
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  width: max-content;
+  font-family: EncodeSans_GC, sans-serif;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
   gap: 20px;
 }
 
 .recommendation-card {
   background-color: var(--color-primary);
+  flex: 0 0 240px;    
   border-radius: 4px;
   overflow: hidden;
   padding: 10px;
+  cursor: pointer;
 }
 
 .recommendation-card .cardImg {
   background-color: var(--color-image-bg);
+  width: 100%;
   border-radius: 2px;
   overflow: hidden;
   height: 140px;
@@ -279,6 +292,11 @@ body {
   color: #ffffff;
   margin: 0;
   opacity: 0.9;
+}
+
+.recommendation-card:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
 }
 
 /* Mobile Alignment Rules */
