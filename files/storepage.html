@@ -81,6 +81,17 @@
           <span style="font-size: 20px"> <b>Categories</b></span>
         </div>
 
+        <!-- Default -->
+        <div class="category">
+          <div class="category-title" onclick="toggleSubcategories(this)">
+            <span>Default</span>
+            <span class="toggle-icon">&#9660;</span>
+          </div>
+          <div class="subcategories">
+            <div class="subcategory">All Products</div>
+          </div>
+        </div>
+
         <!--Cooking-->
         <div class="category">
           <div class="category-title" onclick="toggleSubcategories(this)">
@@ -173,36 +184,44 @@
           >
             ⌕
           </button>
+          <div class="country-filter">
+            <label for="product_country">Filter by Country:</label>
+            <select id="product_country" name="product_country">
+              <option class="country-option" value="">All Countries</option>
+            </select>
+          </div>
         </form>
 
         </div>
-        <h1 style="padding-left: 50px;">Products</h1>
-        <div class="product-section">
-          <!-- Product cards are inserted here, just connect to database to change placeholder info -->
-          <div class="noitem-container" style="display: none">
-            <div class="noitem-content">
-              <img
-                src="Images/ItemNotFound_nobg.png"
-                alt="NoItemImg"
-                class="noitem-image"
-              />
-              <h1>
-                Sorry, we couldn't find any products matching your search.
-              </h1>
+        <div class="main-product-section">
+          <h1 style="padding-left: 50px;">Products</h1>
+          <div class="product-section">
+            <!-- Product cards are inserted here, just connect to database to change placeholder info -->
+            <div class="noitem-container" style="display: none">
+              <div class="noitem-content">
+                <img
+                  src="Images/ItemNotFound_nobg.png"
+                  alt="NoItemImg"
+                  class="noitem-image"
+                />
+                <h1>
+                  Sorry, we couldn't find any products matching your search.
+                </h1>
+              </div>
             </div>
-          </div>
 
-          <!-- <div class="product-card" data-product-id="001" >
-            <img
-              src=""
-              alt=""
-              class="product-image"
-            />                                    // Example of the product card
-            <div class="product-info">
-              <h3 class="product-name"></h3>
-              <p class="product-price"></p>
-            </div>
-          </div> -->
+            <!-- <div class="product-card" data-product-id="001" >
+              <img
+                src=""
+                alt=""
+                class="product-image"
+              />                                    // Example of the product card
+              <div class="product-info">
+                <h3 class="product-name"></h3>
+                <p class="product-price"></p>
+              </div>
+            </div> -->
+          </div>
         </div>
       </div>
     </div>

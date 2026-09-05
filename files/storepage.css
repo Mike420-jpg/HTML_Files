@@ -91,7 +91,7 @@ body {
 
 /* Sidebar Navigation */
 .vertical-navbar {
-  width: 200px;
+  width: 210px;
   position: fixed;
   left: 0;
   top: 100px;
@@ -178,7 +178,7 @@ body {
 }
 
 .searchbar {
-  width: 65%;
+  width: 45%;
   padding: 10px;
   margin-top: 10px;
   border: 1px solid #ccc;
@@ -191,7 +191,15 @@ body {
   background-color: #dadada;
 }
 
+.country-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
 .searchbtn {
+  font-family: none;
   margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -207,8 +215,8 @@ body {
 /* Product Section & Grid Container */
 .product-grid {
   padding: 20px;
-  margin-left: 200px;
-  width: calc(100% - 200px);
+  margin-left: 230px;
+  width: calc(100% - 230px);
   padding-top: 140px;
 }
 
@@ -220,7 +228,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
-  justify-content: center;
+  justify-content: left;
 }
 
 /* Empty State Handling */
