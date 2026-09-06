@@ -6,53 +6,71 @@
   <title>Product Page - Caravan</title>
   
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="productpage.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-md">
-    <div class="container-fluid">
-      <div class="nav-left">
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="Images/CaravanLogo_Transparent.png"
-            alt="Caravan"
-            height="60"
-            id="Caravan_Logo"
-          />
-        </a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <div class="nav-left">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="Images/CaravanLogo_Transparent.png"
+              alt="Caravan"
+              height="60"
+              id="Caravan_Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Center Navigation -->
+          <ul class="navbar-nav nav-center">
+            <li class="nav-item1">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item1">
+              <a class="nav-link" href="storepage.html">Market</a>
+            </li>
+
+            <li class="nav-item1">
+              <a class="nav-link" href="FAQs.html">FAQs</a>
+            </li>
+          </ul>
+
+          <!-- Right Navigation -->
+          <ul class="navbar-nav nav-right">
+            <li class="nav-item2">
+              <a class="nav-link" href="cartpage.html">Cart</a>
+            </li>
+
+            <li class="nav-item2">
+              <a class="nav-link" href="Login.html">Login</a>
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav nav-center">
-          <li class="nav-item1"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item1"><a class="nav-link" href="storepage.html">Market</a></li>
-          <li class="nav-item1"><a class="nav-link" href="FAQs.html">FAQs</a></li>
-        </ul>
-
-        <ul class="navbar-nav nav-right">
-          <li class="nav-item2"><a class="nav-link" href="cartpage.html">Cart</a></li>
-          <li class="nav-item2"><a class="nav-link" href="Login.html">Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Main Content Body -->
   <main class="main-contents">
@@ -142,7 +160,9 @@
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
   <script src="productpage.js"></script>
 </body>
 </html>

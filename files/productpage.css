@@ -31,6 +31,7 @@ body {
 }
 
 /* Navbar Rules */
+/* Navbar Base Styles */
 .navbar {
   background-color: var(--color-primary);
   position: fixed;
@@ -56,6 +57,7 @@ body {
   align-items: center;
 }
 
+/* Centered Navigation */
 .nav-center {
   position: absolute;
   left: 50%;
@@ -85,6 +87,8 @@ body {
 .nav-link:hover {
   color: #a9a9a9 !important;
 }
+
+/* copy until here */
 
 .main-contents {
   max-width: 850px;
@@ -301,16 +305,41 @@ body {
 
 /* Mobile Alignment Rules */
 @media (max-width: 768px) {
-  .product-container {
-    flex-direction: column;
-    height: auto;
+
+  .navbar-collapse {
+    width: 100%;
   }
-  
-  .nav-center {
+
+  .nav-center,
+  .nav-right {
     position: static;
     transform: none;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
     gap: 5px;
+  }
+
+  .nav-right {
+    margin-left: 0;
+  }
+
+  .nav-item1,
+  .nav-item2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-item1 .nav-link,
+  .nav-item2 .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .function-bar {
+    left: 0;
+    padding: 10px;
   }
   
   .product-grid {

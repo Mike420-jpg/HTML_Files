@@ -28,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         .then((products) => {
 
-            // ========================================
             // FIND CURRENT PRODUCT
-            // ========================================
 
             const product = products.find(
                 item => item.product_id === productId
@@ -42,10 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
             }
 
-
-            // ========================================
             // DISPLAY CURRENT PRODUCT
-            // ========================================
 
             basePrice = product.product_price;
 
@@ -58,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("productTitle").textContent =
                 product.product_name;
 
+            document.getElementById("likeCount").textContent =
+                product.product_likes;
+
             document.getElementById("productOrigin").textContent =
                 `Origin: ${product.product_country}`;
 
@@ -67,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updatePrice();
 
 
-            // ========================================
             // SIMILAR SPICES
-            // ========================================
 
             const recommendationsContainer =
                 document.querySelector(
@@ -105,12 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                         otherCategory.category_id
                                 )
                         );
-
-
                     return sameCountry || sameCategory;
                 }
             );
-
 
             // Shuffle
             const shuffledSimilarProducts =
@@ -123,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const recommendedProducts =
                 shuffledSimilarProducts.slice(0, 7);
 
-
             // Create cards
             recommendedProducts.forEach(
                 recommendedProduct => {
@@ -134,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     recommendationCard.classList.add(
                         "recommendation-card"
                     );
-
                     recommendationCard.dataset.productId =
                         recommendedProduct.product_id;
 
@@ -178,10 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
 
-
-            // ========================================
             // SPICES YOU MAY LIKE
-            // ========================================
 
             const likedContainer =
                 document.querySelector(
@@ -267,9 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
 
-        // ========================================
         // ERROR HANDLING
-        // ========================================
 
         .catch((error) => {
 
@@ -285,10 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
-    // ========================================
     // PRICE
-    // ========================================
 
     function updatePrice() {
 
@@ -315,9 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ========================================
     // LIKE BUTTON
-    // ========================================
 
     const likeBtn =
         document.getElementById("likeBtn");
@@ -347,11 +328,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         "&#9829;";
                     likeCount.textContent =
                         count + 1;
+                    // place the code to update the like count in the database here
                 } else {
                     heartIcon.innerHTML =
                         "&#9825;";
                     likeCount.textContent =
                         count - 1;
+                    // place the code to update the like count in the database here
                 }
             }
         );

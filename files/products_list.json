@@ -4,6 +4,7 @@
     "product_name": "Saffron",
     "product_price": 8900.00,
     "product_amount": 10,
+    "product_likes": 428,
     "product_desc": "A highly prized spice made from the dried stigmas of the saffron crocus. It has a delicate floral aroma and gives dishes a distinctive golden color and refined flavor.",
     "product_category": [
       {
@@ -27,6 +28,7 @@
     "product_name": "Black Cardamom",
     "product_price": 515.00,
     "product_amount": 10,
+    "product_likes": 286,
     "product_desc": "Large aromatic cardamom pods with a smoky, earthy flavor. Black cardamom is commonly used in savory curries, rice dishes, stews, and spice blends.",
     "product_category": [
       {
@@ -46,6 +48,7 @@
     "product_name": "Long Pepper",
     "product_price": 500.00,
     "product_amount": 10,
+    "product_likes": 193,
     "product_desc": "A rare pepper with a warm, sweet, earthy, and mildly pungent flavor. It can be ground as a seasoning or used whole in spice blends and slow-cooked dishes.",
     "product_category": [
       {
@@ -65,6 +68,7 @@
     "product_name": "Asafoetida",
     "product_price": 400.00,
     "product_amount": 10,
+    "product_likes": 341,
     "product_desc": "A pungent resinous spice that develops a savory onion-and-garlic-like aroma when cooked. It is widely used in Indian vegetarian dishes, legumes, and vegetable preparations.",
     "product_category": [
       {
@@ -88,6 +92,7 @@
     "product_name": "Makrut Lime Leaves",
     "product_price": 295.00,
     "product_amount": 10,
+    "product_likes": 512,
     "product_desc": "Fragrant citrus leaves with bright lime and floral notes. They are commonly used to flavor Thai curries, soups, stir-fries, marinades, and beverages.",
     "product_category": [
       {
@@ -111,6 +116,7 @@
     "product_name": "Culantro",
     "product_price": 800.00,
     "product_amount": 10,
+    "product_likes": 267,
     "product_desc": "A strongly aromatic herb with a flavor similar to cilantro but more intense. Culantro is commonly used in Caribbean, Latin American, and Southeast Asian cooking.",
     "product_category": [
       {
@@ -134,6 +140,7 @@
     "product_name": "Wasabi",
     "product_price": 875.00,
     "product_amount": 10,
+    "product_likes": 603,
     "product_desc": "A pungent Japanese condiment known for its sharp heat and fresh green character. Wasabi is traditionally served with sushi and sashimi and can also flavor sauces and dressings.",
     "product_category": [
       {
@@ -153,6 +160,7 @@
     "product_name": "Mahlab",
     "product_price": 185.00,
     "product_amount": 10,
+    "product_likes": 178,
     "product_desc": "A fragrant spice made from the kernels of sour cherry pits, offering an almond-like aroma with subtle floral and fruity notes. It is especially valued in breads and pastries.",
     "product_category": [
       {
@@ -176,6 +184,7 @@
     "product_name": "Boldo Leaves",
     "product_price": 165.00,
     "product_amount": 10,
+    "product_likes": 149,
     "product_desc": "Aromatic leaves traditionally brewed as an herbal tea. Boldo has a distinctive earthy and slightly bitter flavor and is commonly associated with traditional South American herbal practices.",
     "product_category": [
       {
@@ -195,6 +204,7 @@
     "product_name": "Sumac",
     "product_price": 365.00,
     "product_amount": 10,
+    "product_likes": 385,
     "product_desc": "A deep red spice made from dried sumac berries. It has a bright, tangy, lemon-like flavor that is commonly used on meats, salads, dips, breads, and rice dishes.",
     "product_category": [
       {
@@ -218,6 +228,7 @@
     "product_name": "Kala Namak",
     "product_price": 370.00,
     "product_amount": 10,
+    "product_likes": 329,
     "product_desc": "Also known as Indian black salt, Kala Namak is a mineral-rich seasoning with a distinctive sulfurous aroma and savory flavor. It is often used in chaats, salads, snacks, and vegetarian dishes.",
     "product_category": [
       {
@@ -241,6 +252,7 @@
     "product_name": "Pasilla de Oaxaca",
     "product_price": 145.00,
     "product_amount": 10,
+    "product_likes": 214,
     "product_desc": "A distinctive Mexican dried chile known for its dark color, smoky aroma, fruity flavor, and moderate heat. It is commonly used in sauces, stews, and traditional Mexican dishes.",
     "product_category": [
       {
@@ -264,6 +276,7 @@
     "product_name": "Yarrow Leaves",
     "product_price": 500.00,
     "product_amount": 10,
+    "product_likes": 121,
     "product_desc": "Aromatic herb leaves traditionally used in herbal preparations and teas. Yarrow has a mildly bitter, grassy, and slightly floral character.",
     "product_category": [
       {
@@ -287,6 +300,7 @@
     "product_name": "Tarragon Leaves",
     "product_price": 1560.00,
     "product_amount": 10,
+    "product_likes": 296,
     "product_desc": "A delicate culinary herb with a sweet, bittersweet, and anise-like flavor. Tarragon is often used with fish, poultry, soups, sauces, mushrooms, and salads.",
     "product_category": [
       {
@@ -310,6 +324,7 @@
     "product_name": "Enoki Mushrooms",
     "product_price": 125.00,
     "product_amount": 10,
+    "product_likes": 474,
     "product_desc": "Delicate mushrooms with long slender stems and small caps. Enoki has a mild flavor and crisp texture and is commonly added to soups, hot pots, stir-fries, and noodle dishes.",
     "product_category": [
       {
@@ -333,6 +348,7 @@
     "product_name": "Lemon Myrtle",
     "product_price": 1200.00,
     "product_amount": 10,
+    "product_likes": 251,
     "product_desc": "An intensely fragrant Australian herb with a strong lemon aroma and fresh citrus flavor. Lemon myrtle is used in teas, desserts, sauces, marinades, and spice blends.",
     "product_category": [
       {
@@ -356,6 +372,7 @@
     "product_name": "Fennel Pollen",
     "product_price": 1750.00,
     "product_amount": 10,
+    "product_likes": 167,
     "product_desc": "A rare spice collected from flowering fennel plants. It has concentrated sweet, floral, citrus, and anise-like notes and is used as a finishing spice for savory and sweet dishes.",
     "product_category": [
       {
@@ -379,6 +396,7 @@
     "product_name": "Marigold Petals",
     "product_price": 265.00,
     "product_amount": 10,
+    "product_likes": 318,
     "product_desc": "Bright edible marigold petals with a mild floral and vegetal flavor. The petals can be used in teas, desserts, salads, and as colorful decorative garnishes.",
     "product_category": [
       {
@@ -402,6 +420,7 @@
     "product_name": "Tonka Beans",
     "product_price": 1100.00,
     "product_amount": 10,
+    "product_likes": 359,
     "product_desc": "Highly aromatic beans with notes of vanilla, almond, cherry, caramel, and warm spice. Tonka beans are especially valued in desserts, chocolate preparations, and specialty beverages.",
     "product_category": [
       {
@@ -425,6 +444,7 @@
     "product_name": "Mastic Resin",
     "product_price": 875.00,
     "product_amount": 10,
+    "product_likes": 227,
     "product_desc": "A natural aromatic resin harvested from the mastic tree. It has a pine-like, slightly citrusy aroma and is used in traditional sweets, breads, drinks, and culinary preparations.",
     "product_category": [
       {
@@ -448,6 +468,7 @@
     "product_name": "Maca Root",
     "product_price": 220.00,
     "product_amount": 10,
+    "product_likes": 442,
     "product_desc": "A Peruvian root commonly dried and ground into powder. Maca has an earthy, nutty, and slightly sweet flavor and is commonly incorporated into smoothies, drinks, and food preparations.",
     "product_category": [
       {
@@ -471,6 +492,7 @@
     "product_name": "Camu-Camu",
     "product_price": 205.00,
     "product_amount": 10,
+    "product_likes": 387,
     "product_desc": "A small Amazonian fruit usually sold as a dried powder. Camu-camu has a naturally tart and fruity flavor and is commonly added to smoothies, juices, and wellness beverages.",
     "product_category": [
       {
@@ -494,6 +516,7 @@
     "product_name": "Tasmanian Pepperberry",
     "product_price": 1700.00,
     "product_amount": 10,
+    "product_likes": 194,
     "product_desc": "A rare Australian spice with a complex flavor profile combining peppery heat with fruity, berry-like and mildly sweet notes. It is prized as a specialty seasoning for gourmet dishes.",
     "product_category": [
       {
@@ -517,6 +540,7 @@
     "product_name": "Green Aniseed",
     "product_price": 250.00,
     "product_amount": 10,
+    "product_likes": 275,
     "product_desc": "Small aromatic seeds with a naturally sweet licorice-like flavor. Green aniseed is used in breads, pastries, desserts, spice blends, and beverages.",
     "product_category": [
       {
@@ -540,6 +564,7 @@
     "product_name": "Ajwain Seeds",
     "product_price": 250.00,
     "product_amount": 10,
+    "product_likes": 231,
     "product_desc": "Small aromatic seeds with a strong thyme-like, peppery, and slightly bitter flavor. Ajwain is commonly used in Indian breads, curries, fried foods, and savory dishes.",
     "product_category": [
       {
@@ -560,9 +585,10 @@
   },
   {
     "product_id": 26,
-    "product_name": " Grains of Selim",
+    "product_name": "Grains of Selim",
     "product_price": 450.00,
     "product_amount": 10,
+    "product_likes": 156,
     "product_desc": "Also known as grains of Selim, these aromatic West African spice pods have a warm, peppery, slightly bitter, and smoky character. They are commonly used in soups, stews, and spice blends.",
     "product_category": [
       {
