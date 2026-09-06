@@ -1,0 +1,299 @@
+/* Font Setup */
+@font-face {
+  font-family: EncodeSans_GC;
+  src: url(Fonts/EncodeSans_SC/EncodeSansSC-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url(Fonts/Merriweather/Merriweather_120pt-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: InstrumentSans_Semi;
+  src: url(Fonts/InstrumentSans/InstrumentSans-SemiBold.ttf);
+}
+
+:root {
+  --color-primary: #6F4E37;
+  --color-secondary: #FAF4ED;
+  --color-card-bg: #FFFFFF;
+  --color-gray-card: #F2F2F2;
+  --color-border-gray: #E2E2E2;
+  --color-text-dark: #333333;
+}
+
+body {
+  background-color: var(--color-secondary);
+  margin: 0;
+  padding: 0;
+  font-family: EncodeSans_GC, system-ui, -apple-system, sans-serif;
+  color: var(--color-text-dark);
+}
+
+/* Navbar Rules */
+.navbar {
+  background-color: var(--color-primary);
+  padding: 5px 0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-divider {
+  color: white;
+  font-size: 14px;
+}
+
+.nav-link {
+  font-family: EncodeSans_GC, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: white !important;
+}
+
+/* Header Title */
+.page-header {
+  text-align: center;
+  margin: 35px 0 25px 0;
+}
+
+.page-header h1 {
+  font-family: Merriweather, serif;
+  font-size: 26px;
+  color: #2D2D2D;
+  margin: 0;
+}
+
+/* Main Profile Grid Layout */
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+/* Sidebar Styles */
+.profile-sidebar {
+  width: 260px;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.user-greeting {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 20px 20px;
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hi-text {
+  font-size: 11px;
+  color: #666;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  border-top: 1px solid var(--color-border-gray);
+  padding: 12px 20px;
+  text-align: left;
+  font-family: InstrumentSans_Semi, sans-serif;
+  font-size: 12px;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item:last-child {
+  border-bottom: 1px solid var(--color-border-gray);
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: #F8F8F8;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Profile Content Panel */
+.profile-content {
+  flex: 1;
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  padding: 25px;
+  min-height: 380px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.content-title {
+  font-family: InstrumentSans_Semi, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Tab Toggle Management */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Structural Styles for Dynamic Database Card Insertion */
+.info-card {
+  background-color: var(--color-gray-card);
+  border-radius: 8px;
+  padding: 12px 18px;
+  border: 1px solid #E8E8E8;
+}
+
+.address-card .card-header-info {
+  font-family: InstrumentSans_Semi, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 3px;
+}
+
+.address-card .card-body-info {
+  font-family: EncodeSans_GC, sans-serif;
+  font-size: 11px;
+  color: #555;
+}
+
+.add-btn {
+  width: 100%;
+  background-color: var(--color-gray-card);
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: InstrumentSans_Semi, sans-serif;
+  font-size: 11px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #EAEAEA;
+}
+
+.voucher-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.voucher-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #000;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    100% 50%, 85% 75%, 75% 100%, 50% 85%, 25% 100%, 15% 75%, 0% 50%, 15% 25%, 25% 0%, 50% 15%, 75% 0%, 85% 25%
+  );
+}
+
+.voucher-title {
+  font-family: InstrumentSans_Semi, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+}
+
+.voucher-sub {
+  font-family: EncodeSans_GC, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+/* Empty State Helper Message */
+.empty-state-message {
+  font-family: EncodeSans_GC, sans-serif;
+  font-size: 12px;
+  color: #888;
+  padding: 10px 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile-sidebar {
+    width: 100%;
+  }
+
+  .nav-center {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
