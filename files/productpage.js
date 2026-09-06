@@ -9,10 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         new URLSearchParams(window.location.search).get("productId")
     );
 
-
-    // ========================================
     // LOAD PRODUCTS
-    // ========================================
 
     fetch("products_list.json")
         .then((response) => {

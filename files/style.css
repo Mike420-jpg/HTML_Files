@@ -265,7 +265,7 @@
 
 .cardContainer {
   display: grid;
-
+  
   /* Automatically adjust number of columns */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 
@@ -295,6 +295,7 @@
   /* Initial fade state */
   opacity: 0;
   transform: translateY(40px);
+  cursor: pointer;
 }
 
 .card.show {
