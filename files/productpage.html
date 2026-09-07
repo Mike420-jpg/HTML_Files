@@ -61,7 +61,7 @@
           <!-- Right Navigation -->
           <ul class="navbar-nav nav-right">
             <li class="nav-item2">
-              <a class="nav-link" href="cartpage.html">Cart</a>
+              <a class="nav-link" href="shoppingcart.html">Cart</a>
             </li>
 
             <li class="nav-item2">
@@ -74,6 +74,34 @@
 
   <!-- Main Content Body -->
   <main class="main-contents">
+
+    <!-- addtocart modal -->
+    <div class="addtocart-modal">
+      <div class="cart-warning">
+        <h2 class="warning-title">ADD TO CART?</h2>
+        <h1 style="font-size: 70px;">&#128722;</h1>
+        <hr>
+        <div class="warning-actions">
+          <button type="button" class="btn btn-outline-danger" onclick="addtocart_confirm()">Yes</button>
+          <button type="button" class="btn btn-outline-primary" onclick="addtocart_close()">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- success Modal -->
+    <div class="success-modal">
+      <div class="cart-warning">
+        <h2 class="warning-title">SUCCESS</h2>
+        <hr>
+        <p class="warning-desc">Your Product has been added to your cart</p>
+        <br>
+        <div class="warning-actions">
+          <button type="button" class="btn btn-outline-primary" onclick="closeModal()">Okay</button>
+        </div>
+      </div>
+    </div>
+
+
     <button class="back-button" onclick="history.back()">&#x21A9;</button>
 
     <!-- Main Product Section -->
@@ -108,7 +136,8 @@
           <button class="btn-like" id="likeBtn">
             <span class="heart-icon">&#9825;</span> <span id="likeCount">129</span>
           </button>
-          <button class="add-to-cart-button" id="addToCartBtn" aria-label="Add to Cart">
+          <button class="add-to-cart-button" id="addToCartBtn" 
+          aria-label="Add to Cart" onclick="addtoCart(this)">
             &#128722;
           </button>
         </div>

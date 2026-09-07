@@ -88,9 +88,9 @@ body {
   color: #a9a9a9 !important;
 }
 
-/* =========================
-   DELETE WARNING MODAL
-========================= */
+
+   /* DELETE WARNING MODAL */
+
 
 .delete-warning-modal {
   position: fixed;
@@ -110,12 +110,6 @@ body {
 
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-
-/* Show modal */
-/* .delete-warning-modal.active {
-  visibility: visible;
-  opacity: 1;
-} */
 
 .delete-warning {
   width: 400px;
@@ -158,6 +152,7 @@ body {
   padding: 8px 20px;
   border-radius: 6px;
   font-size: 14px;
+  font-family: EncodeSans_GC, serif;
 }
 
 .shoppingcart-container {
@@ -180,9 +175,7 @@ body {
   gap: 30px;
 }
 
-/* =========================
-   YOUR CART
-========================= */
+   /* YOUR CART */
 
 .your-cart {
   flex: 1.7;
