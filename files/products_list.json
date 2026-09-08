@@ -18,6 +18,10 @@
       {
         "category_id": 18,
         "category_name": "Desserts"
+      },
+      {
+        "category_id": 17,
+        "category_name": "Pastries"
       }
     ],
     "product_country": "Iran",
@@ -38,6 +42,10 @@
       {
         "category_id": 3,
         "category_name": "Soups & Stews"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
       }
     ],
     "product_country": "India",
@@ -58,6 +66,10 @@
       {
         "category_id": 3,
         "category_name": "Soups & Stews"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
       }
     ],
     "product_country": "India",
@@ -82,6 +94,10 @@
       {
         "category_id": 3,
         "category_name": "Soups & Stews"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
       }
     ],
     "product_country": "India",
@@ -106,6 +122,10 @@
       {
         "category_id": 13,
         "category_name": "Cold Beverages"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
       }
     ],
     "product_country": "Thailand",
@@ -130,6 +150,10 @@
       {
         "category_id": 3,
         "category_name": "Soups & Stews"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
       }
     ],
     "product_country": "Mexico",
@@ -150,6 +174,10 @@
       {
         "category_id": 2,
         "category_name": "Main Course"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "Japan",
@@ -174,6 +202,10 @@
       {
         "category_id": 18,
         "category_name": "Desserts"
+      },
+      {
+        "category_id": 15,
+        "category_name": "Cakes"
       }
     ],
     "product_country": "Turkey",
@@ -194,6 +226,10 @@
       {
         "category_id": 12,
         "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 8,
+        "category_name": "Health & Wellness"
       }
     ],
     "product_country": "Chile",
@@ -218,6 +254,10 @@
       {
         "category_id": 5,
         "category_name": "Sauce & Condiments"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "Turkey",
@@ -242,6 +282,10 @@
       {
         "category_id": 2,
         "category_name": "Main Course"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "India",
@@ -266,6 +310,10 @@
       {
         "category_id": 2,
         "category_name": "Main Course"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "Mexico",
@@ -290,6 +338,10 @@
       {
         "category_id": 9,
         "category_name": "Herbs & Leaves"
+      },
+      {
+        "category_id": 8,
+        "category_name": "Health & Wellness"
       }
     ],
     "product_country": "France",
@@ -312,8 +364,12 @@
         "category_name": "Sauce & Condiments"
       },
       {
-        "category_id": 2,
-        "category_name": "Main Course"
+        "category_id": 12,
+        "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 8,
+        "category_name": "Health & Wellness"
       }
     ],
     "product_country": "France",
@@ -338,6 +394,10 @@
       {
         "category_id": 4,
         "category_name": "Side Dishes"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "Japan",
@@ -362,6 +422,10 @@
       {
         "category_id": 18,
         "category_name": "Desserts"
+      },
+      {
+        "category_id": 13,
+        "category_name": "Cold Beverages"
       }
     ],
     "product_country": "Australia",
@@ -386,6 +450,10 @@
       {
         "category_id": 18,
         "category_name": "Desserts"
+      },
+      {
+        "category_id": 16,
+        "category_name": "Breads"
       }
     ],
     "product_country": "Italy",
@@ -410,6 +478,10 @@
       {
         "category_id": 12,
         "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 18,
+        "category_name": "Desserts"
       }
     ],
     "product_country": "India",
@@ -434,6 +506,10 @@
       {
         "category_id": 12,
         "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 17,
+        "category_name": "Pastries"
       }
     ],
     "product_country": "Venezuela",
@@ -458,6 +534,10 @@
       {
         "category_id": 12,
         "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 17,
+        "category_name": "Pastries"
       }
     ],
     "product_country": "Greece",
@@ -482,6 +562,10 @@
       {
         "category_id": 14,
         "category_name": "Juice & Smoothies"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
       }
     ],
     "product_country": "Peru",
@@ -530,6 +614,10 @@
       {
         "category_id": 5,
         "category_name": "Sauce & Condiments"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "Australia",
@@ -554,6 +642,10 @@
       {
         "category_id": 12,
         "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 18,
+        "category_name": "Desserts"
       }
     ],
     "product_country": "Egypt",
@@ -578,6 +670,10 @@
       {
         "category_id": 4,
         "category_name": "Side Dishes"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "India",
@@ -602,9 +698,149 @@
       {
         "category_id": 5,
         "category_name": "Sauce & Condiments"
+      },
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
       }
     ],
     "product_country": "Ghana",
     "product_image": "https://silkroadspices.ca/cdn/shop/products/GrainsofSelim2_1024x1024.jpg?v=1660243185"
+  },
+  {
+    "product_id": 27,
+    "product_name": "Chervil",
+    "product_price": 650.00,
+    "product_amount": 10,
+    "product_likes": 184,
+    "product_desc": "A delicate culinary herb with a mild parsley-like flavor and subtle anise notes. Chervil is commonly used as a finishing herb for salads, soups, sauces, egg dishes, and light appetizers.",
+    "product_category": [
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
+      },
+      {
+        "category_id": 9,
+        "category_name": "Herbs & Leaves"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
+      }
+    ],
+    "product_country": "France",
+    "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnpdzYrG2RFnYXr4I8BXObesmtnKh2-YjGtnUKoeaGOhZETcWEqI_rJaCf&s=10"
+  },
+  {
+    "product_id": 28,
+    "product_name": "Blade Mace",
+    "product_price": 580.00,
+    "product_amount": 10,
+    "product_likes": 216,
+    "product_desc": "The dried outer covering of the nutmeg seed, blade mace has a warm, sweet, floral, and slightly peppery aroma. It is used to season savory dishes, sauces, soups, and baked preparations.",
+    "product_category": [
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
+      },
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 18,
+        "category_name": "Desserts"
+      },
+      {
+        "category_id": 17,
+        "category_name": "Pastries"
+      }
+    ],
+    "product_country": "Indonesia",
+    "product_image": "https://www.allrecipes.com/thmb/UdOAouCSE0LN4m-wqXFgNS_2ZaQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/What-Is-Mace-4x3-bcaa6556f9864cc29b48af725ddc5ffd.jpg"
+  },
+  {
+    "product_id": 29,
+    "product_name": "Isot Pepper",
+    "product_price": 720.00,
+    "product_amount": 10,
+    "product_likes": 231,
+    "product_desc": "A Turkish pepper known for its deep burgundy color and distinctive smoky, fruity, mildly sweet, and moderately hot flavor. Isot pepper is commonly used as a finishing spice and seasoning.",
+    "product_category": [
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
+      },
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 5,
+        "category_name": "Sauce & Condiments"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
+      }
+    ],
+    "product_country": "Turkey",
+    "product_image": "https://bturkish.com/cdn/shop/files/5c8c2d9a07291c1d74fa6f0c.webp?v=1759944842&width=300"
+  },
+  {
+    "product_id": 30,
+    "product_name": "Sorrel",
+    "product_price": 430.00,
+    "product_amount": 10,
+    "product_likes": 197,
+    "product_desc": "A leafy herb with a distinctive fresh, tangy, lemon-like flavor. Sorrel can be used in salads, soups, sauces, garnishes, and other light culinary preparations.",
+    "product_category": [
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
+      },
+      {
+        "category_id": 9,
+        "category_name": "Herbs & Leaves"
+      },
+      {
+        "category_id": 4,
+        "category_name": "Side Dishes"
+      },
+      {
+        "category_id": 13,
+        "category_name": "Cold Beverages"
+      }
+    ],
+    "product_country": "France",
+    "product_image": "https://www.marthastewart.com/thmb/FBRg22KTMHbocE82bwGniPJxpM8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ms-sorrel-leaves-getty-ee81d3b9ab5045f0aa8dc078972127be.jpg"
+  },
+  {
+    "product_id": 31,
+    "product_name": "Epazote",
+    "product_price": 390.00,
+    "product_amount": 10,
+    "product_likes": 263,
+    "product_desc": "A strongly aromatic Mexican herb with a distinctive earthy, citrusy, and slightly minty character. Epazote is traditionally used in beans, soups, stews, quesadillas, and other Mexican dishes.",
+    "product_category": [
+      {
+        "category_id": 1,
+        "category_name": "Appetizers / Starters"
+      },
+      {
+        "category_id": 2,
+        "category_name": "Main Course"
+      },
+      {
+        "category_id": 9,
+        "category_name": "Herbs & Leaves"
+      },
+      {
+        "category_id": 3,
+        "category_name": "Soups & Stews"
+      }
+    ],
+    "product_country": "Mexico",
+    "product_image": "https://images.squarespace-cdn.com/content/63f3e5fd4d968c376e9f4d3d/1680025207323-PKUU25OSL5MS10YSKWHG/bunch-of-fresh-epazote-mexico-casa-jacaranda.jpg?format=1500w&content-type=image%2Fjpeg"
   }
 ]
