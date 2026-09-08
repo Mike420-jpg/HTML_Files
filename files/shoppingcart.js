@@ -24,19 +24,17 @@ function warning_No() {
 
 function warning_Yes() {
     if (selectedItem) {
-        // Get the product ID from the data attribute
-        const productId = selectedItem.dataset.productId;
+        // Use the cart entry index so identical products with different sizes are distinct.
+        const cartIndex = parseInt(selectedItem.dataset.cartIndex, 10);
 
         // Remove from DOM
         selectedItem.remove();
 
         // Remove from localStorage cart
-        if (productId) {
+        if (!Number.isNaN(cartIndex)) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            // Remove the first occurrence of this product ID
-            const index = cart.findIndex(item => item.cartprod_id === parseInt(productId));
-            if (index > -1) {
-                cart.splice(index, 1);
+            if (cartIndex > -1 && cartIndex < cart.length) {
+                cart.splice(cartIndex, 1);
                 localStorage.setItem("cart", JSON.stringify(cart));
             }
         }
@@ -101,11 +99,11 @@ function displayCartItems() {
     // Create item cards for each product in cart
     cartData.forEach((cartItem, index) => {
         const product = productsData.find(
-            p => p.product_id === cartItem.cartprod_id
+            p => p.product_id === Number(cartItem.cartprod_id)
         );
 
         if (product) {
-            const itemCard = createItemCard(product, index);
+            const itemCard = createItemCard(product, cartItem, index);
             cartItemsContainer.appendChild(itemCard);
         }
     });
@@ -115,11 +113,17 @@ function displayCartItems() {
 }
 
 // Create a single item card element
-function createItemCard(product, index) {
+function createItemCard(product, cartItem, index) {
     const itemCard = document.createElement("div");
     itemCard.classList.add("item-card");
     itemCard.dataset.productId = product.product_id;
+    itemCard.dataset.cartIndex = index;
     itemCard.dataset.index = index;
+
+    const size = cartItem.cartprod_size || "8oz";
+    const sizeMultiplier = size === "16oz" ? 16 : 8;
+    const quantity = cartItem.quantity || 1;
+    const itemPrice = product.product_price * sizeMultiplier;
 
     // Get first category
     const category = product.product_category.length > 0
@@ -133,13 +137,13 @@ function createItemCard(product, index) {
 
         <div class="item-info">
             <h4 class="product_name">${product.product_name}</h4>
-            <p class="product_size">Size: 8oz.</p>
+            <p class="product_size">Size: ${size.replace("oz", " oz")}</p>
             <p class="product_category">Category: ${category}</p>
 
             <div class="quantity-control">
                 <span>Quantity:</span>
                 <button class="quantity-btn" onclick="decreaseQuantity(${index})">−</button>
-                <span class="product_quantity" data-index="${index}">1</span>
+                <span class="product_quantity" data-index="${index}">${quantity}</span>
                 <button class="quantity-btn" onclick="increaseQuantity(${index})">+</button>
 
                 <button class="delete-btn" onclick="deleteWarn(this)">🗑 Delete</button>
@@ -147,7 +151,7 @@ function createItemCard(product, index) {
         </div>
 
         <div class="item-price">
-            <p class="product_price">Price: ₱${product.product_price.toFixed(2)}</p>
+            <p class="product_price">Price: ₱${(itemPrice*quantity).toFixed(2)}</p>
         </div>
     `;
 
@@ -156,43 +160,96 @@ function createItemCard(product, index) {
 
 // Increase quantity for a cart item
 function increaseQuantity(index) {
-    const quantityElement = document.querySelector(
-        `.product_quantity[data-index="${index}"]`
+    const itemCard = document.querySelector(
+        `.item-card[data-cart-index="${index}"]`
     );
-    if (quantityElement) {
-        let quantity = parseInt(quantityElement.textContent);
-        quantityElement.textContent = quantity + 1;
-        updatePriceSummary();
+
+    if (!itemCard) return;
+
+    const quantityElement = itemCard.querySelector(".product_quantity");
+    const priceElement = itemCard.querySelector(".product_price");
+
+    let quantity = parseInt(quantityElement.textContent, 10);
+    quantity++;
+
+    quantityElement.textContent = quantity;
+
+    const productId = Number(itemCard.dataset.productId);
+    const product = productsData.find(
+        p => p.product_id === productId
+    );
+
+    const cartItem = cartData[index];
+
+    if (product) {
+        const sizeMultiplier =
+            cartItem.cartprod_size === "16oz" ? 16 : 8;
+
+        const itemPrice =
+            product.product_price * sizeMultiplier * quantity;
+
+        priceElement.textContent =
+            `Price: ₱${itemPrice.toFixed(2)}`;
     }
+
+    updatePriceSummary();
 }
 
 // Decrease quantity for a cart item
 function decreaseQuantity(index) {
-    const quantityElement = document.querySelector(
-        `.product_quantity[data-index="${index}"]`
+    const itemCard = document.querySelector(
+        `.item-card[data-cart-index="${index}"]`
     );
-    if (quantityElement) {
-        let quantity = parseInt(quantityElement.textContent);
-        if (quantity > 1) {
-            quantityElement.textContent = quantity - 1;
-            updatePriceSummary();
+
+    if (!itemCard) return;
+
+    const quantityElement = itemCard.querySelector(".product_quantity");
+    const priceElement = itemCard.querySelector(".product_price");
+
+    let quantity = parseInt(quantityElement.textContent, 10);
+
+    if (quantity > 1) {
+        quantity--;
+
+        quantityElement.textContent = quantity;
+
+        const productId = Number(itemCard.dataset.productId);
+        const product = productsData.find(
+            p => p.product_id === productId
+        );
+
+        const cartItem = cartData[index];
+
+        if (product) {
+            const sizeMultiplier =
+                cartItem.cartprod_size === "16oz" ? 16 : 8;
+
+            const itemPrice =
+                product.product_price * sizeMultiplier * quantity;
+
+            priceElement.textContent =
+                `Price: ₱${itemPrice.toFixed(2)}`;
         }
+
+        updatePriceSummary();
     }
 }
-
 // Update price summary
 function updatePriceSummary() {
     let totalProductCost = 0;
 
     // Calculate total based on quantities
     document.querySelectorAll(".item-card").forEach((itemCard, index) => {
-        const productId = parseInt(itemCard.dataset.productId);
+        const productId = parseInt(itemCard.dataset.productId, 10);
         const product = productsData.find(p => p.product_id === productId);
+        const cartIndex = parseInt(itemCard.dataset.cartIndex, 10);
+        const cartItem = cartData[cartIndex];
         const quantityElement = itemCard.querySelector(".product_quantity");
         const quantity = quantityElement ? parseInt(quantityElement.textContent) : 1;
 
         if (product) {
-            totalProductCost += product.product_price * quantity;
+            const sizeMultiplier = cartItem && cartItem.cartprod_size === "16oz" ? 16 : 8;
+            totalProductCost += product.product_price * sizeMultiplier * quantity;
         }
     });
 

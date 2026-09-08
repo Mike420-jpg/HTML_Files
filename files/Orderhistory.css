@@ -1,0 +1,124 @@
+@font-face {
+  font-family: EncodeSans_GC;
+  src: url(Fonts/EncodeSans_SC/EncodeSansSC-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url(Fonts/Merriweather/Merriweather_120pt-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: InstrumentSans_Semi;
+  src: url(Fonts/InstrumentSans/InstrumentSans-SemiBold.ttf);
+}
+
+:root {
+  --color-primary: #6F4E37;
+  --color-secondary: #FAF4ED;
+  --color-green-card: #4F7658;
+  --color-image-bg: #EAE3D9;
+  --color-text-light: #ffffff;
+}
+
+body {
+  background-color: var(--color-secondary);
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+/* Navbar Rules */
+/* Navbar Base Styles */
+.navbar {
+  background-color: var(--color-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.container-fluid {
+  position: relative;
+}
+
+#Caravan_Logo {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Centered Navigation */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-item1 .nav-link,
+.nav-item2 .nav-link {
+  font-family: EncodeSans_GC, sans-serif;
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+}
+
+.nav-link:hover {
+  color: #a9a9a9 !important;
+}
+
+
+@media (max-width: 768px) {
+
+    
+  .navbar-collapse {
+    width: 100%;
+  }
+
+  .nav-center,
+  .nav-right {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-right {
+    margin-left: 0;
+  }
+
+  .nav-item1,
+  .nav-item2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-item1 .nav-link,
+  .nav-item2 .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+}

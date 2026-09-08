@@ -273,9 +273,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function updatePrice() {
 
         const multiplier =
-            sizeSelect.value === "16oz"
-                ? 1.8
-                : 1.0;
+            sizeSelect.value === "8oz"
+                ? 8
+                : 16;
 
         const calculatedPrice =
             (basePrice * multiplier).toFixed(2);
@@ -389,8 +389,12 @@ function addtocart_confirm() {
         // Get existing cart from localStorage or create new array
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Add the product to cart
-        cart.push({ cartprod_id: productId });
+        // Store the selected size so the cart can calculate its price.
+        const size = document.getElementById("spiceSize").value;
+        cart.push({
+            cartprod_id: productId,
+            cartprod_size: size
+        });
 
         // Save updated cart back to localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
