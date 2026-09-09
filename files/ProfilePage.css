@@ -208,30 +208,36 @@ body {
   gap: 12px;
 }
 
-/* Specific 10px Radius Input Fields & Boxes */
+/* Input Fields & Rounded Containers with Shadows */
 .radius-10-box {
-  border-radius: 10px !important;
-  background-color: var(--color-gray-card);
-  border: 1px solid #E8E8E8;
+  border-radius: 12px !important;
+  background-color: #F5F5F5;
+  border: 1px solid #E2E2E2;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8);
   font-family: InstrumentSans, sans-serif;
 }
 
-.custom-input-box {
+.custom-input-box,
+.radius-10-input {
   width: 100%;
-  background-color: var(--color-gray-card);
-  border: 1px solid #E8E8E8;
-  border-radius: 10px;
-  padding: 12px 16px;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  border: 1px solid #E2E2E2;
+  border-radius: 12px;
+  padding: 10px 16px;
   font-family: InstrumentSans, sans-serif;
   font-size: 13px;
   color: #333;
   outline: none;
-  transition: border-color 0.2s, background-color 0.2s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease-in-out;
 }
 
-.custom-input-box:focus {
-  border-color: var(--color-primary);
+.custom-input-box:focus,
+.radius-10-input:focus {
   background-color: #FFFFFF;
+  border-color: #6F4E37;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12), 0 0 0 3px rgba(111, 78, 55, 0.15);
 }
 
 .large-box {
@@ -264,7 +270,7 @@ body {
   background-color: #EAE6E1;
 }
 
-/* Form Styles */
+/* Form Layout Styles */
 .form-field-group {
   display: flex;
   flex-direction: column;
@@ -282,25 +288,18 @@ body {
   margin-bottom: 6px;
 }
 
-.radius-10-input {
-  border-radius: 10px;
-  border: 1px solid #CCC;
-  padding: 10px 14px;
-  font-family: InstrumentSans, sans-serif;
-  font-size: 13px;
-  outline: none;
-}
-
 .form-grid-row {
   display: flex;
   gap: 15px;
+  width: 100%;
 }
 
 .form-grid-row .form-field-group {
   flex: 1;
+  min-width: 0;
 }
 
-/* Modal Overlay */
+/* Modal Overlay & Overflow Fixes */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -323,6 +322,8 @@ body {
   width: 100%;
   max-width: 440px;
   padding: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .modal-header {
@@ -394,39 +395,5 @@ body {
   .nav-item2 .nav-link {
     width: 100%;
   }
-
-  /* Specific 10px Radius Input Fields & Boxes with Soft Shadows */
-.radius-10-box {
-  border-radius: 12px !important;
-  background-color: #F5F5F5;
-  border: 1px solid #E2E2E2;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  font-family: InstrumentSans, sans-serif;
-}
-
-.custom-input-box,
-.radius-10-input {
-  width: 100%;
-  background-color: #F5F5F5;
-  border: 1px solid #E2E2E2;
-  border-radius: 12px;
-  padding: 10px 16px;
-  font-family: InstrumentSans, sans-serif;
-  font-size: 13px;
-  color: #333;
-  outline: none;
-  /* Soft outer shadow to match prototype rendering */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  transition: all 0.2s ease-in-out;
-}
-
-/* Enhanced Focus State when Typing */
-.custom-input-box:focus,
-.radius-10-input:focus {
-  background-color: #FFFFFF;
-  border-color: #6F4E37;
-  /* Stronger visible drop shadow on typing/focus */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12), 0 0 0 3px rgba(111, 78, 55, 0.15);
-}
 }
 
