@@ -9,10 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         new URLSearchParams(window.location.search).get("productId")
     );
 
-
-    // ========================================
     // LOAD PRODUCTS
-    // ========================================
 
     fetch("products_list.json")
         .then((response) => {
@@ -276,9 +273,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function updatePrice() {
 
         const multiplier =
-            sizeSelect.value === "16oz"
-                ? 1.8
-                : 1.0;
+            sizeSelect.value === "8oz"
+                ? 8
+                : 16;
 
         const calculatedPrice =
             (basePrice * multiplier).toFixed(2);
@@ -361,3 +358,54 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 });
+
+const addtocart_modal = document.querySelector(".addtocart-modal");
+const success_modal = document.querySelector(".success-modal");
+
+
+function addtoCart(button) {
+    selectedItem = button.closest(".item-card");
+
+    addtocart_modal.style.visibility = "visible";
+    addtocart_modal.style.opacity = "1";
+}
+
+function addtocart_close() {
+    addtocart_modal.style.visibility = "hidden";
+    addtocart_modal.style.opacity = "0";
+
+}
+
+function addtocart_confirm() {
+    addtocart_modal.style.visibility = "hidden";
+    addtocart_modal.style.opacity = "0";
+
+    // Get the product ID from URL
+    const productId = Number(
+        new URLSearchParams(window.location.search).get("productId")
+    );
+
+    if (productId) {
+        // Get existing cart from localStorage or create new array
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Store the selected size so the cart can calculate its price.
+        const size = document.getElementById("spiceSize").value;
+        cart.push({
+            cartprod_id: productId,
+            cartprod_size: size
+        });
+
+        // Save updated cart back to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    // Show success modal
+    success_modal.style.visibility = "visible";
+    success_modal.style.opacity = "1";
+}
+
+function closeModal() {
+    success_modal.style.visibility = "hidden";
+    success_modal.style.opacity = "0";
+}

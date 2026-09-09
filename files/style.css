@@ -265,7 +265,7 @@
 
 .cardContainer {
   display: grid;
-
+  
   /* Automatically adjust number of columns */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 
@@ -295,6 +295,7 @@
   /* Initial fade state */
   opacity: 0;
   transform: translateY(40px);
+  cursor: pointer;
 }
 
 .card.show {
@@ -310,12 +311,17 @@
 
 .cardImg {
   margin: 15px 15px 0;
+  width: calc(100% - 30px);
+  height: 220px;
+  overflow: hidden;
 }
 
 .cardImg img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card .card-text {
@@ -653,7 +659,7 @@
   .cardImg {
     margin: 10px 10px 0;
   }
-
+  
   .card .card-title {
     font-size: 16px;
   }

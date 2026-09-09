@@ -88,7 +88,84 @@ body {
   color: #a9a9a9 !important;
 }
 
-/* copy until here */
+/* copy until here for navbar */
+
+/* add to cart modal */
+.addtocart-modal {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: 2000;
+
+  /* Hidden by default */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Success modal */
+.success-modal {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: 2000;
+
+  /* Hidden by default */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.cart-warning {
+  width: 400px;
+  max-width: 90%;
+  border: var(--color-primary) 2px solid;
+
+  background-color: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.warning-title {
+  font-family: EncodeSans_GC, serif;
+  font-size: 24px;
+
+  margin: 0 0 15px;
+
+  color: black;
+}
+
+.warning-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.warning-actions button {
+  min-width: 90px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: EncodeSans_GC, serif;
+}
 
 .main-contents {
   max-width: 850px;
