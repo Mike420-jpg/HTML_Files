@@ -1,3 +1,19 @@
+//fade-in/out animation for product cards
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
+
 function toggleCategoryMenu() {
     const sidebar = document.querySelector(".vertical-navbar");
     const overlay = document.getElementById("sidebarOverlay");
@@ -64,12 +80,15 @@ function renderProducts() {
         });
 
         productsection.appendChild(productCard);
+
+        observer.observe(productCard);
     });
 
     noItemContainer.style.display = filteredProducts.length ? "none" : "block";
 }
 
-fetch("products_list.json")
+// fetches all the products inside products_list.json
+fetch("products_list.json") 
     .then(response => response.json())
     .then(loadedProducts => {
         products = loadedProducts;
@@ -106,9 +125,11 @@ document.querySelectorAll(".subcategory").forEach(subcategory => {
 
         if (categoryName === "All Products") {
             selectedCategory = "";
+            console.log("selected category: " + categoryName);
         }
         else {
             selectedCategory = categoryName;
+            console.log("selected category: " + categoryName);
         }
 
         // Highlight selected category
@@ -124,7 +145,12 @@ document.querySelectorAll(".subcategory").forEach(subcategory => {
     });
 });
 
+const allProducts = document.querySelector(".subcategory");
+allProducts.classList.add("active");
+selectedCategory = "";
+
 function SearchProducts() {
     renderProducts();
 }
+
 

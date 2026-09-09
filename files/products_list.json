@@ -842,5 +842,165 @@
     ],
     "product_country": "Mexico",
     "product_image": "https://images.squarespace-cdn.com/content/63f3e5fd4d968c376e9f4d3d/1680025207323-PKUU25OSL5MS10YSKWHG/bunch-of-fresh-epazote-mexico-casa-jacaranda.jpg?format=1500w&content-type=image%2Fjpeg"
+  },
+  {
+    "product_id": 32,
+    "product_name": "Chamomile",
+    "product_price": 85.00,
+    "product_amount": 10,
+    "product_likes": 214,
+    "product_desc": "A fragrant flowering herb traditionally used in soothing teas and gentle herbal preparations. Chamomile is valued for its mild floral aroma and calming character.",
+    "product_category": [
+      {
+        "category_id": 6,
+        "category_name": "First aid"
+      },
+      {
+        "category_id": 7,
+        "category_name": "Herbal Remedies & Supplements"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 10,
+        "category_name": "Edible Flowers"
+      }
+    ],
+    "product_country": "Egypt",
+    "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3zZgQ8HFluzw8cETZpt8hhtyXZ4TTgmXzheLleVKLA&s"
+  },
+  {
+    "product_id": 33,
+    "product_name": "Calendula",
+    "product_price": 95.00,
+    "product_amount": 10,
+    "product_likes": 198,
+    "product_desc": "Bright yellow and orange calendula flowers traditionally used in herbal preparations and topical products. They are valued for their gentle botanical character and soothing properties.",
+    "product_category": [
+      {
+        "category_id": 6,
+        "category_name": "First aid"
+      },
+      {
+        "category_id": 7,
+        "category_name": "Herbal Remedies & Supplements"
+      },
+      {
+        "category_id": 10,
+        "category_name": "Edible Flowers"
+      }
+    ],
+    "product_country": "Egypt",
+    "product_image": "https://tiimg.tistatic.com/fp/1/007/008/healthy-and-natural-fresh-calendula-flowers-669.jpg"
+  },
+  {
+    "product_id": 34,
+    "product_name": "Lavender",
+    "product_price": 110.00,
+    "product_amount": 10,
+    "product_likes": 236,
+    "product_desc": "An aromatic flowering herb known for its distinctive floral fragrance. Lavender is commonly used in herbal preparations, teas, aromatics, and traditional soothing applications.",
+    "product_category": [
+      {
+        "category_id": 6,
+        "category_name": "First aid"
+      },
+      {
+        "category_id": 7,
+        "category_name": "Herbal Remedies & Supplements"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 10,
+        "category_name": "Edible Flowers"
+      }
+    ],
+    "product_country": "France",
+    "product_image": "https://media.istockphoto.com/id/155072973/photo/lavender.jpg?s=612x612&w=0&k=20&c=eo6k3O0TQSljJvMBzuRzykMwTwZMfzEpG5ji_lq_0QI="
+  },
+  {
+    "product_id": 35,
+    "product_name": "Cinnamon",
+    "product_price": 70.00,
+    "product_amount": 10,
+    "product_likes": 321,
+    "product_desc": "A warm and aromatic spice with a naturally sweet, woody flavor. Cinnamon is commonly used in teas, desserts, baked goods, and traditional culinary and herbal preparations.",
+    "product_category": [
+      {
+        "category_id": 6,
+        "category_name": "First aid"
+      },
+      {
+        "category_id": 7,
+        "category_name": "Herbal Remedies & Supplements"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
+      },
+      {
+        "category_id": 18,
+        "category_name": "Desserts"
+      }
+    ],
+    "product_country": "Sri Lanka",
+    "product_image": "https://img.magnific.com/free-photo/front-view-cinnamon-sticks-cinnamon-powders-pinecone-wood-board-dark_140725-105514.jpg?semt=ais_hybrid&w=740&q=80"
+  },
+  {
+    "product_id": 36,
+    "product_name": "Peppermint",
+    "product_price": 90.00,
+    "product_amount": 10,
+    "product_likes": 289,
+    "product_desc": "A refreshing aromatic herb with a cool minty flavor and strong fragrance. Peppermint is commonly used in teas, herbal preparations, and traditional soothing applications.",
+    "product_category": [
+      {
+        "category_id": 6,
+        "category_name": "First aid"
+      },
+      {
+        "category_id": 7,
+        "category_name": "Herbal Remedies & Supplements"
+      },
+      {
+        "category_id": 9,
+        "category_name": "Herbs & Leaves"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
+      }
+    ],
+    "product_country": "Morocco",
+    "product_image": "https://cdn.mos.cms.futurecdn.net/YtmBGLwoTEFjvrUZGK3Ne-1600-80.jpg"
+  },
+  {
+    "product_id": 37,
+    "product_name": "Valerian Root",
+    "product_price": 125.00,
+    "product_amount": 10,
+    "product_likes": 176,
+    "product_desc": "A dried aromatic root traditionally used in herbal preparations and teas. Valerian is particularly known for its earthy aroma and its long-standing use in traditional calming and relaxation preparations.",
+    "product_category": [
+      {
+        "category_id": 6,
+        "category_name": "First aid"
+      },
+      {
+        "category_id": 7,
+        "category_name": "Herbal Remedies & Supplements"
+      },
+      {
+        "category_id": 12,
+        "category_name": "Hot Beverages"
+      }
+    ],
+    "product_country": "Germany",
+    "product_image": "https://cdn-prod.medicalnewstoday.com/content/images/articles/318/318088/valerian-root.jpg"
   }
 ]
