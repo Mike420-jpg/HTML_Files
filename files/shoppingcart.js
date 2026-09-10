@@ -1,6 +1,7 @@
 let selectedItem = null;
 let cartData = [];
 let productsData = [];
+let bundlesData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     loadCartItems();
@@ -76,23 +77,21 @@ function loadCartItems() {
     // Load cart from localStorage
     cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Fetch products list
-    fetch("products_list.json")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Unable to load products: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((products) => {
-            productsData = products;
-            displayCartItems();
-        })
-        .catch((error) => {
-            console.error("Error loading cart:", error);
-            document.querySelector(".cart-items").innerHTML =
-                "<p>Unable to load cart items.</p>";
-        });
+    // Fetch both products and bundles
+    Promise.all([
+        fetch("products_list.json").then(r => r.json()),
+        fetch("bundles_list.json").then(r => r.json())
+    ])
+    .then(([products, bundles]) => {
+        productsData = products;
+        bundlesData = bundles;
+        displayCartItems();
+    })
+    .catch((error) => {
+        console.error("Error loading cart:", error);
+        document.querySelector(".cart-items").innerHTML =
+            "<p>Unable to load cart items.</p>";
+    });
 }
 
 // Display cart items in the UI
@@ -121,14 +120,30 @@ function displayCartItems() {
         return;
     }
 
-    // Create item cards for each product in cart
+    // Create item cards for each product/bundle in cart
     cartData.forEach((cartItem, index) => {
-        const product = productsData.find(
-            p => p.product_id === Number(cartItem.cartprod_id)
-        );
+        let item = null;
+        let itemCard = null;
+        
+        if (cartItem.isBundle) {
+            // Find bundle
+            item = bundlesData.find(
+                b => b.bundle_id === Number(cartItem.cartbundle_id)
+            );
+            if (item) {
+                itemCard = createBundleCard(item, cartItem, index);
+            }
+        } else {
+            // Find product
+            item = productsData.find(
+                p => p.product_id === Number(cartItem.cartprod_id)
+            );
+            if (item) {
+                itemCard = createItemCard(item, cartItem, index);
+            }
+        }
 
-        if (product) {
-            const itemCard = createItemCard(product, cartItem, index);
+        if (itemCard) {
             cartItemsContainer.appendChild(itemCard);
         }
     });
@@ -164,6 +179,55 @@ function createItemCard(product, cartItem, index) {
             <h4 class="product_name">${product.product_name}</h4>
             <p class="product_size">Size: ${size.replace("oz", " oz")}</p>
             <p class="product_category">Category: ${category}</p>
+
+            <div class="quantity-control">
+                <span>Quantity:</span>
+                <button class="quantity-btn" onclick="decreaseQuantity(${index})">−</button>
+                <span class="product_quantity" data-index="${index}">${quantity}</span>
+                <button class="quantity-btn" onclick="increaseQuantity(${index})">+</button>
+
+                <button class="delete-btn" onclick="deleteWarn(this)">🗑 Delete</button>
+            </div>
+        </div>
+
+        <div class="item-price">
+            <p class="product_price">Price: ₱${(itemPrice*quantity).toFixed(2)}</p>
+        </div>
+    `;
+
+    return itemCard;
+}
+
+// Create a bundle card element for cart
+function createBundleCard(bundle, cartItem, index) {
+    const itemCard = document.createElement("div");
+    itemCard.classList.add("item-card");
+    itemCard.dataset.bundleId = bundle.bundle_id;
+    itemCard.dataset.cartIndex = index;
+    itemCard.dataset.index = index;
+
+    const size = cartItem.cartprod_size || "8oz";
+    const sizeMultiplier = size === "16oz" ? 16 : 8;
+    const quantity = cartItem.quantity || 1;
+    const itemPrice = bundle.bundle_price * sizeMultiplier;
+
+    // Get bundle items names
+    const bundleItemsNames = bundle.bundle_items_id
+        .map(itemId => {
+            const product = productsData.find(p => p.product_id === itemId);
+            return product ? product.product_name : `Product ${itemId}`;
+        })
+        .join(", ");
+
+    itemCard.innerHTML = `
+        <div class="product-image">
+            <img src="${bundle.bundle_image}" alt="${bundle.bundle_name}">
+        </div>
+
+        <div class="item-info">
+            <h4 class="product_name">${bundle.bundle_name}</h4>
+            <p class="product_size">Size: ${size.replace("oz", " oz")}</p>
+            <p class="product_category">Bundle items: ${bundleItemsNames}</p>
 
             <div class="quantity-control">
                 <span>Quantity:</span>
@@ -266,16 +330,26 @@ function updatePriceSummary() {
 
     // Calculate total based on quantities
     document.querySelectorAll(".item-card").forEach((itemCard, index) => {
-        const productId = parseInt(itemCard.dataset.productId, 10);
-        const product = productsData.find(p => p.product_id === productId);
         const cartIndex = parseInt(itemCard.dataset.cartIndex, 10);
         const cartItem = cartData[cartIndex];
         const quantityElement = itemCard.querySelector(".product_quantity");
         const quantity = quantityElement ? parseInt(quantityElement.textContent) : 1;
+        const sizeMultiplier = cartItem && cartItem.cartprod_size === "16oz" ? 16 : 8;
 
-        if (product) {
-            const sizeMultiplier = cartItem && cartItem.cartprod_size === "16oz" ? 16 : 8;
-            totalProductCost += product.product_price * sizeMultiplier * quantity;
+        if (cartItem.isBundle) {
+            // Handle bundle
+            const bundleId = parseInt(itemCard.dataset.bundleId, 10);
+            const bundle = bundlesData.find(b => b.bundle_id === bundleId);
+            if (bundle) {
+                totalProductCost += bundle.bundle_price * sizeMultiplier * quantity;
+            }
+        } else {
+            // Handle product
+            const productId = parseInt(itemCard.dataset.productId, 10);
+            const product = productsData.find(p => p.product_id === productId);
+            if (product) {
+                totalProductCost += product.product_price * sizeMultiplier * quantity;
+            }
         }
     });
 

@@ -245,6 +245,46 @@ body {
   cursor: pointer;
 }
 
+/* Tabs Container */
+.tabs-container {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-left: 50px;
+}
+
+.tab-button {
+  padding: 12px 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
+  font-family: EncodeSans_GC, sans-serif;
+}
+
+.tab-button:hover {
+  color: var(--color-primary);
+}
+
+.tab-button.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
 /* Product Section & Grid Container */
 .product-grid {
   padding: 20px;

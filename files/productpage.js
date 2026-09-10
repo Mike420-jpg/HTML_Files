@@ -4,67 +4,141 @@ document.addEventListener("DOMContentLoaded", () => {
     const priceDisplay = document.getElementById("productPrice");
 
     let basePrice = 0;
+    let isBundle = false;
+    let currentItem = null;
+    let allProducts = [];
 
     const productId = Number(
         new URLSearchParams(window.location.search).get("productId")
     );
+    
+    const bundleId = Number(
+        new URLSearchParams(window.location.search).get("bundleId")
+    );
 
-    // LOAD PRODUCTS
-
+    // Load all products for bundle items lookup
     fetch("products_list.json")
-        .then((response) => {
-
-            if (!response.ok) {
-                throw new Error(
-                    `Unable to load products: ${response.status}`
-                );
-            }
-
-            return response.json();
-        })
-
+        .then((response) => response.json())
         .then((products) => {
+            allProducts = products;
+        })
+        .catch((error) => console.error("Error loading products:", error));
 
-            // FIND CURRENT PRODUCT
+    // LOAD PRODUCTS OR BUNDLES
 
-            const product = products.find(
-                item => item.product_id === productId
-            );
-
-            if (!product) {
-                throw new Error(
-                    `Product with ID ${productId} was not found`
+    if (bundleId) {
+        isBundle = true;
+        fetch("bundles_list.json")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(
+                        `Unable to load bundles: ${response.status}`
+                    );
+                }
+                return response.json();
+            })
+            .then((bundles) => {
+                // FIND CURRENT BUNDLE
+                const bundle = bundles.find(
+                    item => item.bundle_id === bundleId
                 );
-            }
 
-            // DISPLAY CURRENT PRODUCT
+                if (!bundle) {
+                    throw new Error(
+                        `Bundle with ID ${bundleId} was not found`
+                    );
+                }
 
-            basePrice = product.product_price;
+                currentItem = bundle;
 
-            document.getElementById("mainProductImg").src =
-                product.product_image;
+                // DISPLAY CURRENT BUNDLE
 
-            document.getElementById("mainProductImg").alt =
-                product.product_name;
+                basePrice = bundle.bundle_price;
 
-            document.getElementById("productTitle").textContent =
-                product.product_name;
+                document.getElementById("mainProductImg").src =
+                    bundle.bundle_image;
 
-            document.getElementById("likeCount").textContent =
-                product.product_likes;
+                document.getElementById("mainProductImg").alt =
+                    bundle.bundle_name;
 
-            document.getElementById("productOrigin").textContent =
-                `Origin: ${product.product_country}`;
+                document.getElementById("productTitle").textContent =
+                    bundle.bundle_name;
 
-            document.getElementById("productDesc").textContent =
-                `Description: ${product.product_desc}`;
+                document.getElementById("likeCount").textContent =
+                    bundle.bundle_likes;
 
-            updatePrice();
+                // Show bundle items instead of origin
+                const bundleItemsNames = bundle.bundle_items_id
+                    .map(itemId => {
+                        const product = allProducts.find(p => p.product_id === itemId);
+                        return product ? product.product_name : `Product ${itemId}`;
+                    })
+                    .join(", ");
 
+                document.getElementById("productOrigin").textContent =
+                    `Bundle includes: ${bundleItemsNames}`;
 
-            // SIMILAR SPICES
+                document.getElementById("productDesc").textContent =
+                    `Description: ${bundle.bundle_description}`;
 
-            const recommendationsContainer =
+                updatePrice();
+            })
+            .catch((error) => {
+                console.error("Error loading bundle:", error);
+                document.querySelector(".product-container").innerHTML =
+                    "<p>Unable to load this bundle.</p>";
+            });
+    } else {
+        // Load as product
+        fetch("products_list.json")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(
+                        `Unable to load products: ${response.status}`
+                    );
+                }
+                return response.json();
+            })
+            .then((products) => {
+                // FIND CURRENT PRODUCT
+                const product = products.find(
+                    item => item.product_id === productId
+                );
+
+                if (!product) {
+                    throw new Error(
+                        `Product with ID ${productId} was not found`
+                    );
+                }
+
+                currentItem = product;
+
+                // DISPLAY CURRENT PRODUCT
+                basePrice = product.product_price;
+
+                document.getElementById("mainProductImg").src =
+                    product.product_image;
+
+                document.getElementById("mainProductImg").alt =
+                    product.product_name;
+
+                document.getElementById("productTitle").textContent =
+                    product.product_name;
+
+                document.getElementById("likeCount").textContent =
+                    product.product_likes;
+
+                document.getElementById("productOrigin").textContent =
+                    `Origin: ${product.product_country}`;
+
+                document.getElementById("productDesc").textContent =
+                    `Description: ${product.product_desc}`;
+
+                updatePrice();
+
+                // SIMILAR SPICES
+
+                const recommendationsContainer =
                 document.querySelector(
                     ".recommendations-similar .product-grid"
                 );
@@ -250,23 +324,12 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         })
-
-
-        // ERROR HANDLING
-
         .catch((error) => {
-
-            console.error(
-                "Error loading product:",
-                error
-            );
-
-            document.querySelector(
-                ".product-container"
-            ).innerHTML =
+            console.error("Error loading product:", error);
+            document.querySelector(".product-container").innerHTML =
                 "<p>Unable to load this product.</p>";
-
         });
+    }
 
     // PRICE
 
@@ -380,25 +443,40 @@ function addtocart_confirm() {
     addtocart_modal.style.visibility = "hidden";
     addtocart_modal.style.opacity = "0";
 
-    // Get the product ID from URL
-    const productId = Number(
-        new URLSearchParams(window.location.search).get("productId")
-    );
+    // Get existing cart from localStorage or create new array
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    if (productId) {
-        // Get existing cart from localStorage or create new array
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        // Store the selected size so the cart can calculate its price.
-        const size = document.getElementById("spiceSize").value;
-        cart.push({
-            cartprod_id: productId,
-            cartprod_size: size
-        });
-
-        // Save updated cart back to localStorage
-        localStorage.setItem("cart", JSON.stringify(cart));
+    // Store the selected size so the cart can calculate its price.
+    const size = document.getElementById("spiceSize").value;
+    
+    if (isBundle) {
+        // For bundles
+        const bundleId = Number(
+            new URLSearchParams(window.location.search).get("bundleId")
+        );
+        if (bundleId) {
+            cart.push({
+                cartbundle_id: bundleId,
+                cartprod_size: size,
+                isBundle: true
+            });
+        }
+    } else {
+        // For products
+        const productId = Number(
+            new URLSearchParams(window.location.search).get("productId")
+        );
+        if (productId) {
+            cart.push({
+                cartprod_id: productId,
+                cartprod_size: size,
+                isBundle: false
+            });
+        }
     }
+
+    // Save updated cart back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     // Show success modal
     success_modal.style.visibility = "visible";
