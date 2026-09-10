@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const delete_modal = document.querySelector(".delete-warning-modal");
 
+/*Warning for delete*/
+
 function deleteWarn(button) {
     selectedItem = button.closest(".item-card");
 
@@ -44,6 +46,29 @@ function warning_Yes() {
     }
 
     warning_No();
+}
+
+/*warning for checkout*/
+const warning_modal = document.querySelector(".checkout-warning-modal");
+const checkout_button = document.querySelector(".checkout-btn");
+
+function checkoutWarn(event) {
+
+    warning_modal.style.visibility = "visible";
+    warning_modal.style.opacity = "1";
+}
+
+checkout_button.addEventListener('click', checkoutWarn);
+
+function checkout_No() {
+    warning_modal.style.visibility = "hidden";
+    warning_modal.style.visibility = "0";
+}
+
+function checkout_Yes() {
+    console.log("processing Checkout");
+
+    // PLACE CHECKOUT SCRIPT FOR BACKEND
 }
 
 // Load cart items from localStorage and products_list.json
@@ -234,6 +259,7 @@ function decreaseQuantity(index) {
         updatePriceSummary();
     }
 }
+
 // Update price summary
 function updatePriceSummary() {
     let totalProductCost = 0;
@@ -274,3 +300,4 @@ function updatePriceSummary() {
         }
     }
 }
+
